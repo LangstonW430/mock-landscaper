@@ -1,76 +1,75 @@
-import { MessageSquare, ClipboardList, Sparkles } from 'lucide-react';
-
 const steps = [
   {
-    step: '01',
-    icon: MessageSquare,
-    title: 'Request a Free Quote',
+    index: '01',
+    title: 'An Initial Conversation',
     description:
-      'Fill out our quick form or give us a call. Tell us what you need and we\'ll schedule a free on-site consultation — usually within 48 hours.',
+      'We begin with a phone or in-person conversation to understand your property, your goals, and the scope of what you have in mind. There is no obligation at this stage — it simply helps us determine whether we are a good fit for each other.',
   },
   {
-    step: '02',
-    icon: ClipboardList,
-    title: 'We Plan Your Project',
+    index: '02',
+    title: 'A Plan Built Around Your Property',
     description:
-      'Our team walks your property, listens to your vision, and puts together a detailed plan and transparent quote. No surprises, no pressure.',
+      'We conduct a detailed site assessment and prepare a written scope of work, design drawings where applicable, and a clear investment summary. You will know exactly what is planned and what it costs before we begin.',
   },
   {
-    step: '03',
-    icon: Sparkles,
-    title: 'We Transform Your Space',
+    index: '03',
+    title: 'Execution to a Consistent Standard',
     description:
-      'Our crew gets to work — on time, on budget, and with the clean craftsmanship you\'d expect. When we\'re done, you\'ll love your yard.',
+      'Our crew arrives as scheduled and works to a standard we would be comfortable pointing to as our own. When the project is complete, we walk the property with you. We do not consider the job finished until you do.',
   },
 ];
 
 export default function Process() {
   return (
-    <section className="py-20 lg:py-28 bg-[#080c08]">
+    <section id="process" className="py-24 lg:py-32 bg-[#0f0d0b]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
-        <div className="text-center mb-14">
-          <span className="inline-block text-orange-500 text-sm font-semibold uppercase tracking-widest mb-3">
-            How It Works
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Simple. Fast. Reliable.
-          </h2>
-          <p className="text-zinc-400 text-lg max-w-xl mx-auto">
-            Getting started takes 60 seconds. Here's what happens after you reach out.
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 pb-10 border-b border-[#2a2721]">
+          <div>
+            <p className="text-[#c5a264] text-xs tracking-[0.25em] uppercase mb-4">
+              Our Approach
+            </p>
+            <h2
+              className="text-4xl sm:text-5xl text-[#f0ebe2] leading-tight"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              How We Work
+            </h2>
+          </div>
+          <p className="text-[#6b6259] text-sm leading-relaxed max-w-xs lg:text-right">
+            Every engagement follows the same deliberate process — regardless of project size.
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          {/* Connector line (desktop only) */}
-          <div className="hidden md:block absolute top-10 left-[calc(16.67%+32px)] right-[calc(16.67%+32px)] h-px bg-gradient-to-r from-green-800/60 via-green-600/40 to-green-800/60 z-0" />
-
-          {steps.map(({ step, icon: Icon, title, description }, idx) => (
-            <div key={step} className="relative z-10 flex flex-col items-center text-center md:text-left md:items-start">
-              {/* Step number + icon */}
-              <div className="relative mb-6">
-                <div className="bg-zinc-900 border-2 border-green-700/60 rounded-2xl p-4 shadow-lg shadow-green-950/40">
-                  <Icon className="w-8 h-8 text-green-400" />
-                </div>
-                <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-extrabold w-6 h-6 rounded-full flex items-center justify-center leading-none">
-                  {idx + 1}
-                </span>
-              </div>
-
-              <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
-              <p className="text-zinc-400 text-[15px] leading-relaxed">{description}</p>
+        {/* Steps — horizontal rule layout, no numbered badge badges */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-[#2a2721]">
+          {steps.map(({ index, title, description }) => (
+            <div key={index} className="md:px-10 first:pl-0 last:pr-0 py-10 md:py-0">
+              <p className="text-[#c5a264]/50 text-xs tracking-[0.25em] uppercase mb-5">
+                {index}
+              </p>
+              <h3
+                className="text-[#f0ebe2] text-xl mb-4"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                {title}
+              </h3>
+              <p className="text-[#6b6259] text-sm leading-[1.8]">{description}</p>
             </div>
           ))}
         </div>
 
-        {/* CTA below steps */}
-        <div className="mt-14 text-center">
+        {/* CTA */}
+        <div className="mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-10 border-t border-[#2a2721]">
+          <p className="text-[#9a8f82] text-sm max-w-sm">
+            Ready to begin? The first conversation is complimentary and comes with no expectation.
+          </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-base transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-orange-900/30"
+            className="flex-shrink-0 bg-[#c5a264] hover:bg-[#d4bc8a] text-[#08080a] px-7 py-3.5 text-xs font-semibold tracking-[0.1em] uppercase transition-colors duration-300"
           >
-            Start Step 1 — Get My Free Quote
+            Schedule a Call
           </a>
         </div>
       </div>

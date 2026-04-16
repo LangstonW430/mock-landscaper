@@ -1,31 +1,28 @@
-import { Award, Users, ThumbsUp, MapPin } from 'lucide-react';
-
-const stats = [
-  { icon: Award, value: '15+', label: 'Years of Experience' },
-  { icon: Users, value: '500+', label: 'Happy Homeowners' },
-  { icon: ThumbsUp, value: '98%', label: 'Satisfaction Rate' },
-  { icon: MapPin, value: '3', label: 'Counties Served' },
+// Credentials strip — quality signals, not quantity counts
+const credentials = [
+  { value: 'NALP Member', detail: 'National Assoc. of Landscape Professionals' },
+  { value: 'ISA Certified', detail: 'Arborists on every design project' },
+  { value: 'Est. 2009', detail: 'Fifteen years of estate-level work' },
+  { value: 'Fully Insured', detail: '$2M liability · Workers\' comp on every crew' },
 ];
 
 export default function TrustBar() {
   return (
-    <section className="bg-green-900/20 border-y border-green-900/40 py-10 sm:py-12">
+    <section className="border-y border-[#2a2721] bg-[#0f0d0b]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6">
-          {stats.map(({ icon: Icon, value, label }) => (
+        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#2a2721]">
+          {credentials.map(({ value, detail }) => (
             <div
-              key={label}
-              className="flex flex-col sm:flex-row items-center sm:items-start gap-3 text-center sm:text-left"
+              key={value}
+              className="px-6 py-7 sm:px-8 sm:py-8 flex flex-col gap-1.5"
             >
-              <div className="bg-green-800/50 border border-green-700/30 rounded-xl p-3 flex-shrink-0">
-                <Icon className="w-6 h-6 text-green-400" />
-              </div>
-              <div>
-                <p className="text-3xl font-extrabold text-white tracking-tight leading-none mb-1">
-                  {value}
-                </p>
-                <p className="text-sm text-zinc-400 font-medium leading-tight">{label}</p>
-              </div>
+              <p
+                className="text-[#f0ebe2] text-base font-semibold tracking-wide"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                {value}
+              </p>
+              <p className="text-[#6b6259] text-xs leading-relaxed">{detail}</p>
             </div>
           ))}
         </div>

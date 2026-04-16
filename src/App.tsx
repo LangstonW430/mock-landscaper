@@ -13,7 +13,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#080c08] text-white">
+    <div className="min-h-screen bg-[#08080a] text-[#f0ebe2]">
       <Navbar />
       <main>
         <Hero />
@@ -21,15 +21,17 @@ function App() {
         <Services />
         <About />
         <CTABanner
-          headline="Hundreds of Homeowners Trust GreenEdge"
-          sub="Join our growing list of satisfied clients. Get a free estimate — no commitment, no pressure."
+          headline="Grounds Maintained to a Standard You Can Rely On"
+          sub="Our annual maintenance programmes are designed for properties where consistency matters."
+          ctaText="Request a Consultation"
         />
         <Portfolio />
         <Testimonials />
         <Process />
         <CTABanner
-          headline="Your Dream Yard Is One Call Away"
-          sub="Don't wait until spring. Book now and lock in your spot on our schedule."
+          headline="Let's Discuss Your Property"
+          sub="We welcome enquiries from homeowners looking for a long-term landscape partner, not a one-time crew."
+          ctaText="Begin the Conversation"
         />
         <Contact />
       </main>

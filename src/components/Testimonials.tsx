@@ -1,147 +1,92 @@
-import { Star, Quote } from 'lucide-react';
-
 const testimonials = [
   {
     name: 'Jennifer M.',
-    location: 'Oakdale, OH',
-    rating: 5,
-    avatar: 'JM',
-    avatarColor: 'bg-blue-700',
-    service: 'Lawn Care & Seasonal Cleanup',
-    text: "GreenEdge has been maintaining our yard for three years now. Our lawn is the envy of the neighborhood. Marcus's crew shows up on time every single week, and they never cut corners. Worth every penny.",
-    project: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=70&auto=format&fit=crop',
+    detail: 'Oakdale — Lawn Maintenance, 3-year client',
+    text: "We've worked with other landscaping companies over the years. GreenEdge is different in that they actually notice things before you have to ask — an emerging drainage issue, a planting that isn't thriving, a section that needs attention before the season turns. That level of attentiveness is rare.",
   },
   {
     name: 'David & Lisa R.',
-    location: 'Riverside Heights, OH',
-    rating: 5,
-    avatar: 'DR',
-    avatarColor: 'bg-purple-700',
-    service: 'Landscape Design & Hardscaping',
-    text: "We had a blank slate backyard and absolutely no idea what to do with it. GreenEdge designed and built a gorgeous patio with a fire pit area and native plant beds. The whole project took two weeks and it came out even better than the renderings.",
-    project: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=300&q=70&auto=format&fit=crop',
+    detail: 'Riverside Heights — Full Landscape Design & Hardscaping',
+    text: "We gave them a blank slate — a full half-acre behind the house with no direction other than 'make it feel like it belongs here.' The result is better than anything we'd imagined. The stone terrace, the way the planting transitions from the lawn edge inward — it reads as intentional in a way we couldn't have specified ourselves.",
   },
   {
-    name: 'Tom K.',
-    location: 'Westfield, OH',
-    rating: 5,
-    avatar: 'TK',
-    avatarColor: 'bg-green-700',
-    service: 'Full Yard Transformation',
-    text: "Hired GreenEdge after two other companies gave me the runaround. They came out for a free estimate the next day, gave me a clear quote, and started within the week. The before and after difference is unreal. Highly recommend.",
-    project: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=300&q=70&auto=format&fit=crop',
+    name: 'Thomas K.',
+    detail: 'Westfield — Estate Grounds Management',
+    text: "I have a property that requires a consistent eye and a crew that can be trusted to work without supervision. GreenEdge has managed our grounds for four years. In that time, I've had to call them once — to let them know we'd be traveling and they had full access. That's the kind of relationship I was looking for.",
   },
   {
     name: 'Sandra P.',
-    location: 'Maplewood, OH',
-    rating: 5,
-    avatar: 'SP',
-    avatarColor: 'bg-rose-700',
-    service: 'Mulching & Bed Restoration',
-    text: "My garden beds were a mess after a rough winter. GreenEdge came in, cleaned everything out, edged the beds perfectly, and laid fresh mulch. It looks amazing and they were so easy to work with. Already booked them for spring cleanup.",
-    project: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=300&q=70&auto=format&fit=crop',
+    detail: 'Maplewood — Garden Bed Restoration & Seasonal Care',
+    text: "The difference between GreenEdge and the company I used previously is evident in how they leave a job. Everything is edged precisely, the transitions between materials are clean, and they take the debris with them. My beds have been in better condition every spring since we made the switch.",
   },
 ];
 
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          className={`w-4 h-4 ${i < rating ? 'fill-orange-400 text-orange-400' : 'text-zinc-600'}`}
-        />
-      ))}
-    </div>
-  );
-}
-
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 lg:py-28 bg-[#0b100b]">
+    <section id="testimonials" className="py-24 lg:py-32 bg-[#08080a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
-        <div className="text-center mb-14">
-          <span className="inline-block text-orange-500 text-sm font-semibold uppercase tracking-widest mb-3">
-            Customer Reviews
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-            What Our Clients Say
-          </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-            Real reviews from real homeowners. Over 127 five-star ratings on Google.
+        <div className="mb-16 pb-10 border-b border-[#2a2721]">
+          <p className="text-[#c5a264] text-xs tracking-[0.25em] uppercase mb-4">
+            Client Testimonials
           </p>
+          <h2
+            className="text-4xl sm:text-5xl text-[#f0ebe2] leading-tight max-w-xl"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+          >
+            In Their Own Words
+          </h2>
         </div>
 
-        {/* Testimonials grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-black/40 group relative overflow-hidden"
-            >
-              {/* Quote mark background */}
-              <Quote className="absolute top-4 right-4 w-12 h-12 text-zinc-800 group-hover:text-zinc-700 transition-colors" />
-
-              {/* Rating */}
-              <div className="flex items-center justify-between mb-4">
-                <StarRating rating={t.rating} />
-                <span className="text-xs text-zinc-500 font-medium uppercase tracking-wide border border-zinc-700 px-2.5 py-1 rounded-full">
-                  {t.service}
-                </span>
-              </div>
-
-              {/* Review text */}
-              <p className="text-zinc-300 text-[15px] leading-relaxed mb-5">
-                "{t.text}"
-              </p>
-
-              {/* Reviewer */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div
-                    className={`${t.avatarColor} w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0`}
+        {/* Testimonials — editorial two-column */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-[#2a2721]">
+          {/* Left column */}
+          <div className="space-y-0 divide-y divide-[#2a2721] md:pr-12">
+            {testimonials.slice(0, 2).map((t) => (
+              <blockquote key={t.name} className="py-10 first:pt-0">
+                <p className="text-[#9a8f82] text-[15px] leading-[1.8] mb-6 italic">
+                  "{t.text}"
+                </p>
+                <footer>
+                  <p
+                    className="text-[#f0ebe2] text-sm font-medium"
+                    style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                   >
-                    {t.avatar}
-                  </div>
-                  <div>
-                    <p className="text-white font-semibold text-sm">{t.name}</p>
-                    <p className="text-zinc-500 text-xs">{t.location}</p>
-                  </div>
-                </div>
-                <div className="w-12 h-12 rounded-xl overflow-hidden border border-zinc-700 flex-shrink-0">
-                  <img
-                    src={t.project}
-                    alt="Project result"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
+                    {t.name}
+                  </p>
+                  <p className="text-[#6b6259] text-xs mt-1 tracking-wide">{t.detail}</p>
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+
+          {/* Right column */}
+          <div className="space-y-0 divide-y divide-[#2a2721] md:pl-12">
+            {testimonials.slice(2).map((t) => (
+              <blockquote key={t.name} className="py-10 first:pt-0 md:first:pt-0">
+                <p className="text-[#9a8f82] text-[15px] leading-[1.8] mb-6 italic">
+                  "{t.text}"
+                </p>
+                <footer>
+                  <p
+                    className="text-[#f0ebe2] text-sm font-medium"
+                    style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                  >
+                    {t.name}
+                  </p>
+                  <p className="text-[#6b6259] text-xs mt-1 tracking-wide">{t.detail}</p>
+                </footer>
+              </blockquote>
+            ))}
+          </div>
         </div>
 
-        {/* Google rating badge */}
-        <div className="mt-10 flex justify-center">
-          <div className="flex items-center gap-4 bg-zinc-900 border border-zinc-800 rounded-2xl px-6 py-4">
-            <div className="flex gap-0.5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-orange-400 text-orange-400" />
-              ))}
-            </div>
-            <div className="w-px h-8 bg-zinc-700" />
-            <div className="text-center">
-              <p className="text-white font-bold text-lg leading-none">4.9 / 5</p>
-              <p className="text-zinc-500 text-xs mt-0.5">127 Google Reviews</p>
-            </div>
-            <div className="w-px h-8 bg-zinc-700" />
-            <svg viewBox="0 0 40 40" className="w-8 h-8 flex-shrink-0" aria-label="Google">
-              <path fill="#4285F4" d="M20 16.36v4.91h8.2c-.33 2.06-2.43 6.03-8.2 6.03-4.94 0-8.97-4.09-8.97-9.13s4.03-9.13 8.97-9.13c2.81 0 4.69 1.2 5.77 2.23l3.93-3.79C26.87 4.5 23.65 3 20 3 11.72 3 5 9.72 5 18s6.72 15 15 15c8.66 0 14.4-6.08 14.4-14.65 0-.98-.1-1.73-.24-2.48L20 16.36z" />
-              <path fill="#34A853" d="M5 18c0 2.48.62 4.82 1.71 6.86l4.07-3.16A8.96 8.96 0 0111.03 18l-4.11-3.2A14.88 14.88 0 005 18z" />
-              <path fill="#FBBC05" d="M20 9.87c2.28 0 3.82.99 4.7 1.82l3.47-3.38C25.87 6.08 23.16 5 20 5c-5.34 0-9.89 3.06-12.22 7.5l4.11 3.2C13 12.03 16.21 9.87 20 9.87z" />
-              <path fill="#EA4335" d="M20 26.13c-3.79 0-7-2.16-8.11-5.7l-4.07 3.16C10.11 27.94 14.66 31 20 31c3.02 0 5.91-.99 8.06-2.84l-3.85-2.98A8.75 8.75 0 0120 26.13z" />
-            </svg>
-          </div>
+        {/* Closing line */}
+        <div className="mt-12 pt-10 border-t border-[#2a2721] text-center">
+          <p className="text-[#6b6259] text-sm">
+            Additional references available upon request.
+          </p>
         </div>
       </div>
     </section>

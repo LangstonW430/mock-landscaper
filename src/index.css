@@ -1,11 +1,34 @@
 @import "tailwindcss";
 
 @theme {
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', system-ui, sans-serif;
-  --color-brand-green: #166534;
-  --color-brand-green-light: #16a34a;
-  --color-brand-orange: #f97316;
-  --color-brand-orange-dark: #ea580c;
+
+  /* Gold / Champagne accent — replaces orange */
+  --color-gold-DEFAULT: #c5a264;
+  --color-gold-dark: #a8874e;
+  --color-gold-light: #d4bc8a;
+  --color-gold-dim: #c5a26418;
+
+  /* Forest green — muted, deep, sophisticated */
+  --color-forest-DEFAULT: #1d3d2a;
+  --color-forest-light: #27503a;
+  --color-forest-text: #3e7a56;
+  --color-forest-subtle: #1d3d2a20;
+
+  /* Dark backgrounds — warm-neutral, not green-tinted */
+  --color-ink: #08080a;
+  --color-surface: #0f0d0b;
+  --color-card: #141210;
+  --color-rim: #1e1c18;
+  --color-border: #2a2721;
+  --color-border-light: #352f28;
+
+  /* Text */
+  --color-parchment: #f0ebe2;
+  --color-stone: #9a8f82;
+  --color-stone-dark: #6b6259;
 }
 
 * {
@@ -18,13 +41,19 @@ html {
 
 body {
   margin: 0;
-  background-color: #080c08;
-  color: #e4e7e4;
+  background-color: #08080a;
+  color: #f0ebe2;
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
+}
+
+/* Utility: Playfair Display headline */
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
 }

@@ -1,80 +1,91 @@
-import { CheckCircle2, ArrowRight } from 'lucide-react';
-
-const strengths = [
-  'Family-owned and operated since 2009',
-  'Fully licensed, bonded, and insured',
-  'Satisfaction guaranteed on every job',
-  'Transparent pricing — no hidden fees',
-  'Responsive communication & on-time crews',
-  'Locally rooted — we live here too',
-];
+import { ArrowRight } from 'lucide-react';
 
 export default function About() {
   return (
-    <section id="about" className="py-20 lg:py-28 bg-[#0b100b]">
+    <section id="about" className="py-24 lg:py-32 bg-[#0f0d0b]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Image side */}
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+          {/* Image */}
           <div className="relative order-2 lg:order-1">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/60">
+            <div className="overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1621873495914-a5c5f54d5b8a?w=900&q=80&auto=format&fit=crop"
-                alt="GreenEdge landscaping crew at work"
-                className="w-full h-[480px] object-cover"
+                src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=900&q=80&auto=format&fit=crop"
+                alt="Professionally landscaped estate property"
+                className="w-full h-[520px] object-cover saturate-[0.9]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
 
-            {/* Floating stat card */}
-            <div className="absolute -bottom-6 -right-4 lg:-right-8 bg-zinc-900 border border-zinc-700 rounded-2xl p-5 shadow-2xl shadow-black/60 max-w-[200px]">
-              <p className="text-4xl font-extrabold text-orange-500 leading-none mb-1">15+</p>
-              <p className="text-zinc-400 text-sm leading-tight">
-                Years transforming yards across the region
+            {/* Year callout — thin, editorial, not a floating card */}
+            <div className="absolute -bottom-px -right-px bg-[#0f0d0b] border-t border-l border-[#2a2721] px-6 py-4">
+              <p
+                className="text-[#c5a264] text-3xl font-light tracking-tight"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                2009
+              </p>
+              <p className="text-[#6b6259] text-xs tracking-wide mt-0.5">Founded</p>
+            </div>
+          </div>
+
+          {/* Text */}
+          <div className="order-1 lg:order-2">
+            <p className="text-[#c5a264] text-xs tracking-[0.25em] uppercase mb-5">
+              About GreenEdge
+            </p>
+            <h2
+              className="text-4xl sm:text-5xl text-[#f0ebe2] leading-tight mb-8"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              Landscape Work That Holds Its Standard Over Time
+            </h2>
+
+            <div className="space-y-5 text-[#9a8f82] text-[15px] leading-relaxed mb-10">
+              <p>
+                GreenEdge was founded by Marcus and Dana Rivera in 2009 with a deliberate
+                focus on a smaller number of clients and a higher standard of work.
+                That approach has not changed. We take on a limited number of new
+                engagements each season, which allows every property to receive
+                the attention it deserves.
+              </p>
+              <p>
+                Our team includes ISA-certified arborists, licensed landscape architects,
+                and experienced hardscape installers who have spent their careers working
+                on residential properties where quality is non-negotiable. We do not
+                subcontract design work. Every plan that carries the GreenEdge name
+                is reviewed by a principal before we break ground.
+              </p>
+              <p>
+                We work primarily in Franklin, Oakdale, and Westfield Counties,
+                and we maintain an active client roster that we genuinely take pride in.
+                Referrals account for the majority of new business — which we consider
+                the most honest measure of our work.
               </p>
             </div>
 
-            {/* Green accent line */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-green-600 rounded-tl-2xl opacity-60" />
-          </div>
-
-          {/* Text side */}
-          <div className="order-1 lg:order-2">
-            <span className="inline-block text-orange-500 text-sm font-semibold uppercase tracking-widest mb-3">
-              About Us
-            </span>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
-              We Take Pride In Every{' '}
-              <span className="text-green-400">Yard We Touch</span>
-            </h2>
-            <p className="text-zinc-300 text-base leading-relaxed mb-5">
-              GreenEdge was founded in 2009 by Marcus and Dana Rivera, a husband-and-wife team
-              with a passion for beautiful outdoor spaces and a commitment to honest work.
-              What started as two people and a truck has grown into a trusted crew of 12
-              landscape professionals — but the family values haven't changed.
-            </p>
-            <p className="text-zinc-400 text-base leading-relaxed mb-8">
-              We serve homeowners and businesses across the greater metro area, handling
-              everything from weekly lawn care to complete outdoor redesigns. When you
-              hire GreenEdge, you're not just getting a service — you're getting neighbors
-              who care about doing the job right.
-            </p>
-
-            {/* Strengths checklist */}
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-              {strengths.map((s) => (
-                <li key={s} className="flex items-start gap-2.5 text-sm text-zinc-300">
-                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span>{s}</span>
-                </li>
-              ))}
-            </ul>
+            {/* Thin rule + credential list */}
+            <div className="border-t border-[#2a2721] pt-8 mb-8">
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                {[
+                  'ISA-Certified Arborists',
+                  'Licensed Landscape Architects',
+                  'NALP Professional Member',
+                  '$2M General Liability Coverage',
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-2.5">
+                    <div className="w-1 h-1 rounded-full bg-[#c5a264] flex-shrink-0" />
+                    <span className="text-[#9a8f82] text-xs">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3.5 rounded-xl font-semibold text-base transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-orange-900/30"
+              className="group inline-flex items-center gap-2.5 bg-[#c5a264] hover:bg-[#d4bc8a] text-[#08080a] px-7 py-3.5 text-xs font-semibold tracking-[0.1em] uppercase transition-colors duration-300"
             >
-              Work With Us
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              Begin a Conversation
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>

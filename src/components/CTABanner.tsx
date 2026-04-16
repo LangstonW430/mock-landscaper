@@ -1,49 +1,58 @@
-import { Phone, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface CTABannerProps {
   headline?: string;
   sub?: string;
+  ctaText?: string;
 }
 
 export default function CTABanner({
-  headline = 'Ready to Transform Your Yard?',
-  sub = 'Get a free, no-obligation quote from our team. We respond within 24 hours.',
+  headline = 'Designed for Properties That Demand More',
+  sub = 'We take on a limited number of new clients each season. Enquiries are welcome year-round.',
+  ctaText = 'Request a Consultation',
 }: CTABannerProps) {
   return (
-    <section className="relative py-16 lg:py-20 overflow-hidden">
-      {/* Background image with overlay */}
+    <section className="relative py-20 lg:py-24 overflow-hidden">
+      {/* Background image */}
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=70&auto=format&fit=crop"
           alt=""
           aria-hidden="true"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center saturate-[0.6]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-green-950/95 via-green-950/90 to-green-900/80" />
+        <div className="absolute inset-0 bg-[#0f0d0b]/92" />
       </div>
 
-      {/* Decorative green border line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500/60 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500/60 to-transparent" />
+      {/* Top/bottom hairlines */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-[#c5a264]/20" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-[#c5a264]/20" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p className="text-[#c5a264] text-xs tracking-[0.25em] uppercase mb-5">
+          GreenEdge Landscaping
+        </p>
+        <h2
+          className="text-3xl sm:text-4xl lg:text-[48px] text-[#f0ebe2] leading-tight tracking-tight mb-6"
+          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+        >
           {headline}
         </h2>
-        <p className="text-green-200/80 text-lg mb-8 max-w-xl mx-auto">{sub}</p>
+        <p className="text-[#9a8f82] text-base mb-10 max-w-md mx-auto leading-relaxed">
+          {sub}
+        </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#contact"
-            className="group flex items-center gap-2 bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white px-7 py-4 rounded-xl font-semibold text-base transition-all duration-200 hover:-translate-y-0.5 shadow-xl shadow-orange-900/40 w-full sm:w-auto justify-center"
+            className="group flex items-center gap-2.5 bg-[#c5a264] hover:bg-[#d4bc8a] text-[#08080a] px-8 py-4 text-xs font-semibold tracking-[0.1em] uppercase transition-all duration-300 hover:-translate-y-0.5 w-full sm:w-auto justify-center"
           >
-            Get My Free Quote
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            {ctaText}
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
             href="tel:5551234567"
-            className="flex items-center gap-2 border border-white/30 hover:border-white/60 bg-white/10 hover:bg-white/20 text-white px-7 py-4 rounded-xl font-semibold text-base transition-all duration-200 hover:-translate-y-0.5 w-full sm:w-auto justify-center"
+            className="border border-[#f0ebe2]/20 hover:border-[#f0ebe2]/40 text-[#9a8f82] hover:text-[#f0ebe2] px-8 py-4 text-xs font-medium tracking-[0.1em] uppercase transition-all duration-300 hover:-translate-y-0.5 w-full sm:w-auto text-center"
           >
-            <Phone className="w-4 h-4" />
             (555) 123-4567
           </a>
         </div>

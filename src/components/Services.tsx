@@ -1,120 +1,113 @@
-import { Scissors, PenTool, Layers, Leaf, Wind, Droplets, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const services = [
   {
-    icon: Scissors,
+    index: '01',
     title: 'Lawn Care & Maintenance',
     description:
-      'Weekly or bi-weekly mowing, edging, blowing, and seasonal fertilization to keep your lawn thick, green, and healthy all year long.',
+      'Precision mowing, edging, aeration, and seasonal fertilisation programmes tailored to your soil profile and turf variety. Your grounds are maintained to the same standard every visit.',
     image: 'https://images.unsplash.com/photo-1589923188900-85dae523342b?w=600&q=80&auto=format&fit=crop',
-    highlight: true,
   },
   {
-    icon: PenTool,
+    index: '02',
     title: 'Landscape Design',
     description:
-      'Custom planting plans, garden beds, and full outdoor redesigns tailored to your style, soil, and budget. We handle it all — plants, layout, and installation.',
+      'Site analysis, conceptual design, and full installation of curated planting schemes. We work with your architecture and existing conditions to create environments that evolve beautifully over time.',
     image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80&auto=format&fit=crop',
-    highlight: false,
   },
   {
-    icon: Layers,
+    index: '03',
     title: 'Hardscaping',
     description:
-      'Patios, retaining walls, walkways, and fire pit areas built to last. We use premium materials that complement your home and add serious curb appeal.',
+      'Natural stone terraces, bluestone walkways, retaining structures, and fire features built with the same materials and joinery standards found in high-end residential construction.',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&auto=format&fit=crop',
-    highlight: false,
   },
   {
-    icon: Leaf,
-    title: 'Mulching & Bed Prep',
+    index: '04',
+    title: 'Mulching & Bed Preparation',
     description:
-      'Fresh mulch application protects your plants, retains moisture, and instantly improves the look of your landscaping beds. We refresh and edge for a crisp finish.',
+      'Soil amendment, weed suppression, and premium hardwood mulch application that protects plant health and presents your beds with a clean, intentional finish year-round.',
     image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80&auto=format&fit=crop',
-    highlight: false,
   },
   {
-    icon: Wind,
-    title: 'Seasonal Cleanup',
+    index: '05',
+    title: 'Seasonal Care',
     description:
-      'Spring and fall cleanups including leaf removal, debris clearing, bed cleanup, and preparing your yard for the next season. On time, every time.',
+      'Spring and autumn programmes covering debris clearance, bed restoration, pruning, winterisation, and preparation for the next growing season. Scheduled and reliable.',
     image: 'https://images.unsplash.com/photo-1477511801984-4ad318ed9846?w=600&q=80&auto=format&fit=crop',
-    highlight: false,
   },
   {
-    icon: Droplets,
-    title: 'Irrigation Systems',
+    index: '06',
+    title: 'Irrigation & Water Management',
     description:
-      'Smart sprinkler installation and maintenance that keeps your lawn watered efficiently. Save money on water bills while keeping every zone healthy.',
-    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?w=600&q=80&auto=format&fit=crop',
-    highlight: false,
+      'Smart-controller irrigation design and installation that delivers the right amount of water to each zone. Reduces waste, promotes deep root development, and extends plant life.',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80&auto=format&fit=crop&crop=center',
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 lg:py-28 bg-[#080c08]">
+    <section id="services" className="py-24 lg:py-32 bg-[#08080a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
-        <div className="text-center mb-14">
-          <span className="inline-block text-orange-500 text-sm font-semibold uppercase tracking-widest mb-3">
-            What We Do
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Our Services
-          </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            From weekly lawn care to full outdoor transformations — we bring professional
-            results to every job, big or small.
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 pb-10 border-b border-[#2a2721]">
+          <div>
+            <p className="text-[#c5a264] text-xs tracking-[0.25em] uppercase mb-4">
+              Services
+            </p>
+            <h2
+              className="text-4xl sm:text-5xl text-[#f0ebe2] leading-tight"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              What We Do
+            </h2>
+          </div>
+          <p className="text-[#6b6259] text-sm leading-relaxed max-w-xs lg:text-right">
+            Every engagement begins with understanding your property, your use,
+            and the standard of finish you expect.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map(({ icon: Icon, title, description, image, highlight }) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#2a2721]">
+          {services.map(({ index, title, description, image }) => (
             <div
               key={title}
-              className={`group relative rounded-2xl overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/50 ${
-                highlight
-                  ? 'border-green-600/60 bg-green-950/40'
-                  : 'border-zinc-800 bg-zinc-900/60'
-              }`}
+              className="group relative bg-[#08080a] overflow-hidden"
             >
               {/* Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-52 overflow-hidden">
                 <img
                   src={image}
                   alt={title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 saturate-[0.85] group-hover:saturate-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent" />
-                {/* Icon badge */}
-                <div
-                  className={`absolute top-4 left-4 rounded-xl p-2.5 ${
-                    highlight ? 'bg-green-600' : 'bg-zinc-800/90 backdrop-blur-sm border border-zinc-700'
-                  }`}
-                >
-                  <Icon className={`w-5 h-5 ${highlight ? 'text-white' : 'text-green-400'}`} />
-                </div>
-                {highlight && (
-                  <span className="absolute top-4 right-4 bg-orange-500 text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
-                    Most Popular
-                  </span>
-                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08080a] via-black/20 to-transparent" />
+
+                {/* Index number */}
+                <span className="absolute top-4 left-5 text-[#c5a264]/60 text-xs tracking-[0.2em] font-medium">
+                  {index}
+                </span>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-4">{description}</p>
+              <div className="p-6 pb-7">
+                <h3
+                  className="text-[#f0ebe2] text-lg mb-3 group-hover:text-[#c5a264] transition-colors duration-300"
+                  style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                >
+                  {title}
+                </h3>
+                <p className="text-[#6b6259] text-sm leading-relaxed mb-5">
+                  {description}
+                </p>
                 <a
                   href="#contact"
-                  className={`inline-flex items-center gap-1.5 text-sm font-semibold transition-colors group/link ${
-                    highlight ? 'text-green-400 hover:text-green-300' : 'text-orange-400 hover:text-orange-300'
-                  }`}
+                  className="inline-flex items-center gap-1.5 text-[#c5a264] text-xs tracking-[0.15em] uppercase font-medium hover:gap-3 transition-all duration-200"
                 >
-                  Get a Quote
-                  <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                  Enquire
+                  <ArrowRight className="w-3 h-3" />
                 </a>
               </div>
             </div>
