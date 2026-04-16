@@ -106,7 +106,7 @@ export default function Services() {
                   href="#contact"
                   className="inline-flex items-center gap-1.5 text-[#c5a264] text-xs tracking-[0.15em] uppercase font-medium hover:gap-3 transition-all duration-200"
                 >
-                  Enquire
+                  Inquire
                   <ArrowRight className="w-3 h-3" />
                 </a>
               </div>

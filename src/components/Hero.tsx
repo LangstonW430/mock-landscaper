@@ -6,7 +6,7 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=85&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=85&auto=format&fit=crop"
           alt="Professionally landscaped estate garden"
           className="w-full h-full object-cover object-center"
         />
